@@ -66,7 +66,7 @@ export default function Product() {
       <CardMedia
         className={classes.media}
         image= {img1}
-        title="Batman Black"
+        title="Batman Black t-shirt"
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">

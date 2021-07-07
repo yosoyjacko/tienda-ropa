@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import { Badge } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 //imagenLogo
 import logo from './../assets/img/logo.png';
@@ -39,9 +40,11 @@ export default function Navbar() {
     <div className={classes.root}>
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <img alt="logo" src={logo} className={classes.image}/>
-          </IconButton>
+          <Link to="/">
+            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+              <img alt="logo" src={logo} className={classes.image}/>
+            </IconButton>
+          </Link>        
           <div className={classes.grow}/>
           <Typography variant="h6" color="textPrimary" component="p">
             Hello Guest
@@ -50,11 +53,13 @@ export default function Navbar() {
               <Button variant="outlined">
                 <strong>Sign in</strong>
               </Button>
-              <IconButton aria-label="show cart items" color="inherit">
-                  <Badge badgeContent={2} color="secondary">
-                    <ShoppingCart fontSize="large" color="primary"/>
-                  </Badge>
-              </IconButton>
+              <Link to="checkout-page">
+                <IconButton aria-label="show cart items" color="inherit">
+                    <Badge badgeContent={2} color="secondary">
+                      <ShoppingCart fontSize="large" color="primary"/>
+                    </Badge>
+                </IconButton>
+              </Link>
           </div>
         </Toolbar>
       </AppBar>

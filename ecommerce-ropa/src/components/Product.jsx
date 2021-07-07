@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -12,8 +12,9 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import {AddShoppingCart} from '@material-ui/icons';
 import accounting from 'accounting';
-//imagen
-// import img1 from "./../assets/img/foto1.jpg"
+import { actionTypes } from '../reducer';
+import {useStateValue} from '../StateProvider'
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,13 +39,28 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function Product({product : {name, productType, price, rating, image, description}}) {
+export default function Product({product : {id, name, productType, price, rating, image, description}}) {
   const classes = useStyles();
+  const [{basket}, dispatch] = useStateValue();
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+  const addToBasket = () => {
+    dispatch({
+      type: actionTypes.ADD_TO_BASKET,
+      item: {
+        id,
+        name,
+        productType,
+        price,
+        image,
+        description,
+      }
+    })
+  }
 
   return (
     <Card className={classes.root}>
@@ -72,7 +88,7 @@ export default function Product({product : {name, productType, price, rating, im
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label='Add to Cart' >
+        <IconButton aria-label='Add to Cart' onClick={addToBasket} >
           <AddShoppingCart fontSize='largo'/>
         </IconButton>
           {Array(rating)

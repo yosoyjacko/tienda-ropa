@@ -8,6 +8,8 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import DeleteIcon from '@material-ui/icons/Delete';
 import accounting from 'accounting';
+import {useStateValue} from '../StateProvider';
+import { actionTypes } from '../reducer';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,6 +35,12 @@ const useStyles = makeStyles((theme) => ({
 export default function CheckoutCard ({
     product : {id, name, productType, price, rating, image, description}}) {
     const classes = useStyles();
+    const [{basket}, dispatch] = useStateValue();
+
+    const removeItem = () => dispatch({
+      type: actionTypes.REMOVE_ITEM,
+      id,
+    })
 
     return (
         <Card className={classes.root}>
@@ -63,7 +71,7 @@ export default function CheckoutCard ({
                           ))}
                 </div>
                 <IconButton>
-                    <DeleteIcon fontSize="large"/>    
+                    <DeleteIcon fontSize="large" onClick={removeItem}/>    
                 </IconButton>
             </CardActions>
         </Card>

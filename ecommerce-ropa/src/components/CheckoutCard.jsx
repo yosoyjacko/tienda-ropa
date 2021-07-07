@@ -33,11 +33,6 @@ const useStyles = makeStyles((theme) => ({
 export default function CheckoutCard ({
     product : {id, name, productType, price, rating, image, description}}) {
     const classes = useStyles();
-    const [expanded, setExpanded] = React.useState(false);
-
-    const handleExpandClick = () => {
-      setExpanded(!expanded);
-    };
 
     return (
         <Card className={classes.root}>

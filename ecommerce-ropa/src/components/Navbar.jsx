@@ -52,16 +52,18 @@ export default function Navbar() {
             Hello Guest
           </Typography>
           <div className={classes.button}>
+            <Link to="signin">
               <Button variant="outlined">
                 <strong>Sign in</strong>
               </Button>
-              <Link to="checkout-page">
-                <IconButton aria-label="show cart items" color="inherit">
-                    <Badge badgeContent={basket?.length} color="secondary">
-                      <ShoppingCart fontSize="large" color="primary"/>
-                    </Badge>
-                </IconButton>
-              </Link>
+            </Link>              
+            <Link to="checkout-page">
+              <IconButton aria-label="show cart items" color="inherit">
+                <Badge badgeContent={basket?.length} color="secondary">
+                  <ShoppingCart fontSize="large" color="primary"/>
+                </Badge>
+              </IconButton>
+            </Link>
           </div>
         </Toolbar>
       </AppBar>

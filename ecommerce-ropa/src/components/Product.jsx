@@ -12,9 +12,8 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import {AddShoppingCart} from '@material-ui/icons';
 import accounting from 'accounting';
-
 //imagen
-import img1 from "./../assets/img/foto1.jpg"
+// import img1 from "./../assets/img/foto1.jpg"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function Product() {
+export default function Product({product : {id, name, productType, price, rating, image, description}}) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -56,27 +55,27 @@ export default function Product() {
             variant='h5'
             color='textSecondary'
           >
-            {accounting.formatMoney(50)}
+            {accounting.formatMoney(price)}
           </Typography>
         }
-        title="T-shirt"
+        title={name}
         subheader="in stock"
       />
       <CardMedia
         className={classes.media}
-        image= {img1}
-        title="Batman Black t-shirt"
+        image= {image}
+        title= {name}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          T-shirt batman
+          {productType}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label='Add to Cart' >
           <AddShoppingCart fontSize='largo'/>
         </IconButton>
-          {Array(4)
+          {Array(rating)
             .fill()
             .map((_, i) => (
               <p>&#11088;</p>
@@ -94,7 +93,7 @@ export default function Product() {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>"Remera de batman espectacular"</Typography>
+          <Typography paragraph>{description}</Typography>
         </CardContent>
       </Collapse>
     </Card>

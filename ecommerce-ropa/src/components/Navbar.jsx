@@ -19,11 +19,12 @@ import { useHistory } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginBottom: "7rem",
+    marginBottom: "6rem",
   },
   appBar: {
       backgroundColor: "whitesmoke",
       boxShadow: "none",
+      
   },
   grow: {
       flexGrow: 1,
@@ -31,10 +32,17 @@ const useStyles = makeStyles((theme) => ({
   button: {
       marginLeft: theme.spacing(2),
   },
+  butonin: {
+    background: '#adb5bd',
+  },
   image: {
       marginRight: "10px",
       height: "3rem"
   },
+  linkline: {
+    textDecorationLine:'none',
+  },
+
 }));
 
 export default function Navbar() {
@@ -67,12 +75,12 @@ export default function Navbar() {
           </Link>        
           <div className={classes.grow}/>
           <Typography variant="h6" color="textPrimary" component="p">
-            Hello {user ? user.email : "Guest"}
+            Bienvenido {user ? user.email : "Usuario"}
           </Typography>
           <div className={classes.button}>
-            <Link to="signin">
-              <Button variant="outlined" onClick={handleAut}>
-                <strong>{user ? "Sign Out" : "Sign In"}</strong>
+            <Link to="signin" className={classes.linkline}>
+              <Button variant="outlined" onClick={handleAut} className={classes.butonin}>
+                <strong>{user ? "Salir" : "Acceder"}</strong>
               </Button>
             </Link>              
             <Link to="checkout-page">

@@ -11,75 +11,75 @@ import img8 from "./assets/img/foto8.jpg";
 const products = [
     {
         id: 1,
-        name: "item 1",
-        productType: "Running T-shirt",
+        name: "Batman V1",
+        productType: "diseño 1",
         price: 50,
         rating: 5,
         image: img1,
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, inventore? Provident eaque quasi ex. Ab."
+        description: "Remera con diseño de la pelicula Batman v Superman"
     },
     {
         id: 2,
-        name: "T-shirt 2",
-        productType: "T-shirt",
+        name: "Batman V2",
+        productType: "diseño 2",
         price: 60,
         rating: 2,
         image: img2,
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, inventore? Provident eaque quasi ex. Ab."
+        description: "Remera con logo de Batman"
     },
     {
         id: 3,
-        name: "T-shirt 3",
-        productType: "T-shirt 13",
+        name: "Flash V1",
+        productType: "diseño 1",
         price: 66,
         rating: 1,
         image: img3,
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, inventore? Provident eaque quasi ex. Ab."
+        description: "Remera mangas largas traje flash"
     },
     {
         id: 4,
-        name: "T-shirt 4",
-        productType: "T-shirt black",
+        name: "Flash V2",
+        productType: "diseño 2",
         price: 80,
         rating: 3,
         image: img4,
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, inventore? Provident eaque quasi ex. Ab."
+        description: "Remera diseño 2 de flash"
     },
     {
         id: 5,
-        name: "T-shirt 5",
-        productType: "Running",
+        name: "Remera Gris",
+        productType: "diseño",
         price: 50,
         rating: 5,
         image: img5,
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, inventore? Provident eaque quasi ex. Ab."
+        description: "Remera color Gris"
     },
     {
         id: 6,
-        name: "T-shirt 6",
-        productType: "Running T-shirt gold",
+        name: "Remera Blanca",
+        productType: "diseño",
         price: 23,
         rating: 1,
         image: img6,
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, inventore? Provident eaque quasi ex. Ab."
+        description: "Remera color Blanco Hombre"
     },
     {
         id: 7,
-        name: "T-shirt 7",
-        productType: "Running T-shirt two",
+        name: "Remera Blanca",
+        productType: "diseño",
         price: 55,
         rating: 5,
         image: img7,
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, inventore? Provident eaque quasi ex. Ab."
+        description: "Remera blanca de mujer"
     },
     {
         id: 8,
-        name: "T-shirt 8",
-        productType: "Running T-shirt vamo a calmarno",
+        name: "Superman V1",
+        productType: "diseño 1",
         price: 100,
         rating: 3,
         image: img8,
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.    Aliquid, inventore? Provident eaque quasi ex. Ab."
+        description: "Remera diseño de superman traje negro mangas cortas"
     }
 ]
 

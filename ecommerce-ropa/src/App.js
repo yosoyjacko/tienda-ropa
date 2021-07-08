@@ -11,7 +11,7 @@ import {useEffect} from 'react';
 import { auth } from './firebase';
 import { actionTypes } from './reducer';
 import {useStateValue} from './StateProvider';
-
+import Checkout from './components/CheckoutForm/Checkout';
 function App() {
 
   const [{user}, dispatch] = useStateValue();
@@ -40,6 +40,9 @@ function App() {
         </Route>
         <Route path="/checkout-page">
           <CheckoutPage />
+        </Route>
+        <Route path="/checkout">
+          <Checkout />
         </Route>
         <Route path="/">
           <Products />

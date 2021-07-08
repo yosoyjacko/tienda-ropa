@@ -19,6 +19,7 @@ import {useStateValue} from '../StateProvider';
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
+    background: "whitesmoke"
   },
   action: {
     marginTop: "1rem",
@@ -75,7 +76,7 @@ export default function Product({product : {id, name, productType, price, rating
           </Typography>
         }
         title={name}
-        subheader="in stock"
+        subheader="en stock"
       />
       <CardMedia
         className={classes.media}
@@ -102,7 +103,7 @@ export default function Product({product : {id, name, productType, price, rating
           })}
           onClick={handleExpandClick}
           aria-expanded={expanded}
-          aria-label="show more"
+          aria-label="Mas Info"
         >
           <ExpandMoreIcon />
         </IconButton>

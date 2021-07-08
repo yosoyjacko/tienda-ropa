@@ -55,7 +55,7 @@ export default function CheckoutCard ({
                 </Typography>
               }
               title={name}
-              subheader="in stock"
+              subheader="en stock"
             />
             <CardMedia
               className={classes.media}
